@@ -18,3 +18,21 @@ pom 文件的mock依赖 https://github.com/chenshun00/mock , 修改了需要手�
 ```
 
 mock代码来自于 https://github.com/dakuohao/mock ，修改了部分代码，感谢这么优秀的mock库 :+1:
+
+
+### 使用
+
+* tomcat在web.xml 新增servlet映射
+
+```text
+    <servlet>
+        <servlet-name>GatewayServlet</servlet-name>
+        <servlet-class>top.huzhurong.gateway.dubbo.web.GatewayServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GatewayServlet</servlet-name>
+        <url-pattern>/dubbo/*</url-pattern>
+    </servlet-mapping>    
+```
+
+* SpringBoot可参考 `zuul` 新增 `@EnableXXXX`
